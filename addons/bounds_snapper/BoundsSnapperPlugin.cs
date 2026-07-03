@@ -30,7 +30,7 @@ public partial class BoundsSnapperPlugin : EditorPlugin
 
 	public override void _ExitTree()
 	{
-		if (_snapToggleBtn != null)
+		if (_snapToggleBtn != null && GodotObject.IsInstanceValid(_snapToggleBtn))
 		{
 			_snapToggleBtn.GetParent()?.RemoveChild(_snapToggleBtn);
 			_snapToggleBtn.QueueFree();
@@ -46,6 +46,11 @@ public partial class BoundsSnapperPlugin : EditorPlugin
 
 	public override int _Forward3DGuiInput(Camera3D camera, InputEvent @event)
 	{
+		if (_snapToggleBtn == null || !GodotObject.IsInstanceValid(_snapToggleBtn) || _controller == null)
+		{
+			return (int)EditorPlugin.AfterGuiInput.Pass;
+		}
+
 		if (!_snapToggleBtn.ButtonPressed)
 		{
 			_controller.StopDragging(false);
@@ -53,7 +58,7 @@ public partial class BoundsSnapperPlugin : EditorPlugin
 		}
 
 		var selectedNodes = EditorInterface.Singleton.GetSelection().GetSelectedNodes();
-		if (selectedNodes.Count == 0)
+		if (selectedNodes == null || selectedNodes.Count == 0)
 		{
 			_controller.StopDragging(false);
 			return (int)EditorPlugin.AfterGuiInput.Pass;
