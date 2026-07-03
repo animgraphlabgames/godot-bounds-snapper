@@ -2,6 +2,8 @@
 
 # `Bounds Snapper 📌`
 
+[![Godot v4.2+](https://img.shields.io/badge/Godot-4.2%2B-%23478cbf?logo=godot-engine&logoColor=white)](https://godotengine.org)
+
 Snaps bounding box of selected 3D object(s) to bounds of other objects in the scene graph.
 
 ![demo.gif](screenshots/demo.gif)
