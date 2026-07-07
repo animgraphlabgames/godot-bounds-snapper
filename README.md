@@ -10,11 +10,7 @@ Snaps bounding box of selected 3D object(s) to bounds of other objects in the sc
 
 </div>
 
-> [!WARNING]
-> Plugin is written in C# and requires the Godot .NET (Mono) 4.2+ version of the editor.
-
-> [!NOTE]
-> It's not vertex polygonal snapping that [already ships with Godot](https://github.com/godotengine/godot/pull/117235).
+**IMPORTANT**: once downloaded you must build the project (hammer icon) to start using addon.
 
 ### Supported Nodes
 
@@ -30,6 +26,13 @@ Snaps bounding box of selected 3D object(s) to bounds of other objects in the sc
 4. Click and hold the <kbd>LMB</kbd> on the corner to begin dragging.
 5. Drag towards another object's bounding box corners to snap.
 6. Release the mouse button to apply, or <kbd>RMB</kbd> while dragging to cancel.
+
+> [!WARNING]
+> Plugin is written in C# and requires the Godot .NET (Mono) 4.2+ version of the editor.
+
+> [!NOTE]
+> It's not vertex polygonal snapping that [already ships with Godot](https://github.com/godotengine/godot/pull/117235).
+
 
 ## TODO
 
